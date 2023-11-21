@@ -3,8 +3,7 @@ import FeedbackOptions from './FeedbackOptions';
 import Section from './Section';
 import css from './Feedback.module.scss';
 
-const Feedback = ({ options, onClick }) => {
-  const { good, neutral, bad } = options;
+const Feedback = ({ good, neutral, bad, onClick }) => {
   const countTotalFeedback = () => good + neutral + bad;
   const countPositiveFeedbackPercentage = () =>
     Math.round((good / countTotalFeedback()) * 100) || 0;
@@ -13,7 +12,7 @@ const Feedback = ({ options, onClick }) => {
     <div className={css.feedback}>
       <Section title="Please leave feedback">
         <FeedbackOptions
-          options={Object.keys(options)}
+          options={['good', 'neutral', 'bad']}
           onLeaveFeedback={onClick}
         />
       </Section>
