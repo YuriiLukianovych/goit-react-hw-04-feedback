@@ -1,0 +1,11 @@
+.statistic {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  color: #444;
+  p > span {
+    font-weight: 500;
+    color: #000;
+  }
+}
